@@ -74,6 +74,8 @@ function Component({
   isDisabled,
   checkIfWeekend,
   onChange,
+  onChangeMonth,
+  onChangeYear,
   weekendMap,
   isHighlight,
 }: CalendarViewProps): React.ReactElement<CalendarViewProps> {
@@ -411,6 +413,8 @@ function Component({
               monthInView={monthInView}
               weekends={weekends}
               onChange={onChange}
+              onChangeMonth={onChangeMonth}
+              onChangeYear={onChangeYear}
               yearInView={yearInView}
               isHighlight={isHighlight}
             />

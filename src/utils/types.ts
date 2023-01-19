@@ -168,6 +168,17 @@ export interface CalendarProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange?: (value: Value) => any | Promise<any> | void;
   /**
+   * OnChangeMonth callback functionn.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChangeMonth?: (value: number|any) => any | Promise<any> | void;
+  /**
+   * OnChangeYear callback functionn.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChangeYear?: (value: number|any) => any | Promise<any> | void;
+
+  /**
    * This callback will be called when user selects the start range
    */
   onPartialRangeSelect?: (value: Value) => any | Promise<any> | void;
@@ -207,7 +218,7 @@ type CommonProps = Required<
     | 'className'
   >
 > &
-  Pick<CalendarProps, 'isHighlight' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView'>;
+  Pick<CalendarProps, 'isHighlight' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView' | 'onChangeMonth' | 'onChangeYear'>;
 
 export interface CalendarViewProps extends CommonProps {
   onChangeNewSelectedRangeEnd: (date: Date | undefined) => unknown;
@@ -264,6 +275,8 @@ export type DayOfMonthSelectorProps = Pick<
   | 'isDisabled'
   | 'checkIfWeekend'
   | 'onChange'
+  | 'onChangeMonth'
+  | 'onChangeYear'
   | 'onPartialRangeSelect'
   | 'onEachMultiSelect'
 >;

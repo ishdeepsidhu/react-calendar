@@ -57,6 +57,8 @@ function CalendarWithRef(
     onEachMultiSelect,
     initialView,
     onChange,
+    onChangeMonth,
+    onChangeYear,
     isHighlight,
     monthsLabel = NATIVE_INDEX_TO_LABEL_MONTHS_MAP,
     weekDaysLabel = NATIVE_INDEX_TO_LABEL_WEEKDAY_MAP,
@@ -202,6 +204,7 @@ function CalendarWithRef(
   const changeYearInView = useCallback(
     (year: number) => {
       !lockView && setYearInView(year);
+      !lockView && onChangeYear && onChangeYear(year);
     },
     [lockView],
   );
@@ -209,6 +212,7 @@ function CalendarWithRef(
   const changeMonthInView = useCallback(
     (month: MonthIndices) => {
       !lockView && setMonthInView(month);
+      !lockView && onChangeMonth && onChangeMonth(month);
     },
     [lockView],
   );
@@ -260,6 +264,8 @@ function CalendarWithRef(
       selectedMultiDates: selectedMultiDates,
       isMultiSelectorView: isMultiSelectorView,
       onChange: onChange,
+      onChangeMonth:onChangeMonth,
+      onChangeYear:onChangeYear,
       view: view,
       setView: changeView,
       weekendMap: weekendMap,
@@ -301,6 +307,8 @@ function CalendarWithRef(
       isMultiSelectorView,
       isHighlight,
       onChange,
+      onChangeMonth,
+      onChangeYear,
       view,
       changeView,
       weekendMap,

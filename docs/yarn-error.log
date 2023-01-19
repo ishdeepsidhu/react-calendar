@@ -1,0 +1,64 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\bootc\.node\corepack\yarn\1.22.15\bin\yarn.js clean
+
+PATH: 
+  C:\Users\bootc\AppData\Local\Temp\yarn--1674121522126-0.9057921556826514;E:\pp\npm-packs-mod\react-calendar\docs\node_modules\.bin;C:\Users\bootc\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\bootc\AppData\Local\Temp\yarn--1674121521674-0.9456931919447629;E:\pp\npm-packs-mod\react-calendar\docs\node_modules\.bin;C:\Users\bootc\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Program Files\nodejs\bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;E:\pp\npm-packs-mod\react-calendar\node_modules\.bin;E:\pp\npm-packs-mod\node_modules\.bin;E:\pp\node_modules\.bin;E:\node_modules\.bin;C:\Users\bootc\AppData\Roaming\nvm\v16.14.2\node_modules\npm\node_modules\@npmcli\run-script\lib\node-gyp-bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Users\bootc\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Go\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-11.0.14.1_1\bin;E:\android-dev\androidsdk\platform-tools;E:\android-dev\androidsdk\tools;C:\Users\bootc\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts;C:\ffm;C:\Program Files\Crucial\Crucial Storage Executive;C:\terraformBin;C:\Program Files\PuTTY\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\bootc\AppData\Local\Microsoft\WindowsApps;C:\Users\bootc\.dotnet\tools;C:\Users\bootc\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\bootc\go\bin;C:\Users\bootc\AppData\Local\Programs\Microsoft VS Code\bin;
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.14.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  TypeError: Cannot create property '-iguroo-945970443618' on string '{"-iguroo-945970443618":"{\"d\":{\"codeartifact\":{\"us-east-1\":{\"amazonaws\":{\"com/npm/common-utilities/\":\"\"}}}}}","-iguroo-945970443618-d-codeartifact-us-east-1-amazonaws-com-npm-common-utilities-":""}'
+      at set (C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:53945:28)
+      at set (C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:53959:14)
+      at set (C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:53939:16)
+      at Function.objectPath.set (C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:53992:14)
+      at NpmRegistry.mergeEnv (C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:92155:18)
+      at NpmRegistry.<anonymous> (C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:31942:12)
+      at Generator.next (<anonymous>)
+      at step (C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:310:30)
+      at C:\Users\bootc\.node\corepack\yarn\1.22.15\lib\cli.js:328:14
+      at new Promise (<anonymous>)
+
+npm manifest: 
+  {
+    "name": "@natscale/react-calendar-docs",
+    "version": "0.0.0",
+    "description": "@natscale/react-calendar documentation and demo.",
+    "main": "index.js",
+    "author": "",
+    "license": "MIT",
+    "homepage": "https://natscale.github.io/react-calendar",
+    "scripts": {
+      "predeploy": "yarn build",
+      "deploy": "gh-pages -d .docz/dist",
+      "test": "echo 'No tests to run.'",
+      "clean": "rimraf .docz && docz clean",
+      "start": "yarn develop",
+      "develop": "yarn clean && docz dev --prefix-paths /docs",
+      "build": "yarn clean && docz build"
+    },
+    "dependencies": {
+      "@nejcm/docz-theme-extended": "2.0.14",
+      "docz": "2.4.0",
+      "react": "^16.0.0",
+      "react-dom": "^16.0.0",
+      "prop-types": "15.8.1",
+      "rimraf": "3.0.2"
+    },
+    "devDependencies": {
+      "gh-pages": "4.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
