@@ -76,6 +76,8 @@ function Component({
   onChange,
   onChangeMonth,
   onChangeYear,
+  onPrevClickCallback,
+  onNextClickCallback,
   weekendMap,
   isHighlight,
 }: CalendarViewProps): React.ReactElement<CalendarViewProps> {
@@ -127,7 +129,8 @@ function Component({
     if (view === 'months') {
       onChangeViewingYear(yearInView !== 1 ? yearInView - 1 : 1);
     }
-  }, [view, monthInView, onChangeViewingMonth, onChangeViewingYear, yearInView, startingYearForCurrRange]);
+    if(onPrevClickCallback) onPrevClickCallback(view);
+  }, [view, monthInView, onChangeViewingMonth, onChangeViewingYear, yearInView, startingYearForCurrRange,onPrevClickCallback]);
 
   const onNextClick = useCallback(() => {
     if (view === 'month_dates') {
@@ -151,7 +154,8 @@ function Component({
     if (view === 'months') {
       onChangeViewingYear(getNextYear(yearInView));
     }
-  }, [view, isSecondary, monthInView, onChangeViewingMonth, onChangeViewingYear, yearInView, startingYearForCurrRange]);
+    if(onNextClickCallback) onNextClickCallback(view);
+  }, [view, isSecondary, monthInView, onChangeViewingMonth, onChangeViewingYear, yearInView, startingYearForCurrRange,onNextClickCallback]);
 
   const calendarRef = useRef<HTMLDivElement | null>(null);
   const cells = useRef<HTMLButtonElement[]>([]);

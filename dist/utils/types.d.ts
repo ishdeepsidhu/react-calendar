@@ -164,6 +164,8 @@ export interface CalendarProps {
      * OnChangeYear callback functionn.
      */
     onChangeYear?: (value: number | any) => any | Promise<any> | void;
+    onNextClickCallback?: (value: number | any) => any | Promise<any> | void;
+    onPrevClickCallback?: (value: number | any) => any | Promise<any> | void;
     /**
      * This callback will be called when user selects the start range
      */
@@ -183,7 +185,7 @@ export interface CalendarWithShortcutProps extends CalendarProps {
      */
     direction?: 'left' | 'right' | 'bottom';
 }
-type CommonProps = Required<Pick<CalendarProps, 'monthsLabel' | 'weekDaysLabel' | 'lockView' | 'isDisabled' | 'noPadRangeCell' | 'weekends' | 'fixedRange' | 'startOfWeek' | 'fontSize' | 'size' | 'hideAdjacentDates' | 'useDarkMode' | 'showDualCalendar' | 'className'>> & Pick<CalendarProps, 'isHighlight' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView' | 'onChangeMonth' | 'onChangeYear'>;
+type CommonProps = Required<Pick<CalendarProps, 'monthsLabel' | 'weekDaysLabel' | 'lockView' | 'isDisabled' | 'noPadRangeCell' | 'weekends' | 'fixedRange' | 'startOfWeek' | 'fontSize' | 'size' | 'hideAdjacentDates' | 'useDarkMode' | 'showDualCalendar' | 'className'>> & Pick<CalendarProps, 'isHighlight' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView' | 'onChangeMonth' | 'onChangeYear' | 'onNextClickCallback' | 'onPrevClickCallback'>;
 export interface CalendarViewProps extends CommonProps {
     onChangeNewSelectedRangeEnd: (date: Date | undefined) => unknown;
     onChangeNewSelectedRangeStart: (date: Date | undefined) => unknown;

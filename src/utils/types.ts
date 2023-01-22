@@ -177,6 +177,8 @@ export interface CalendarProps {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChangeYear?: (value: number|any) => any | Promise<any> | void;
+  onNextClickCallback?: (value: number|any) => any | Promise<any> | void;
+  onPrevClickCallback?: (value: number|any) => any | Promise<any> | void;
 
   /**
    * This callback will be called when user selects the start range
@@ -218,7 +220,7 @@ type CommonProps = Required<
     | 'className'
   >
 > &
-  Pick<CalendarProps, 'isHighlight' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView' | 'onChangeMonth' | 'onChangeYear'>;
+  Pick<CalendarProps, 'isHighlight' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView' | 'onChangeMonth' | 'onChangeYear' | 'onNextClickCallback' | 'onPrevClickCallback'>;
 
 export interface CalendarViewProps extends CommonProps {
   onChangeNewSelectedRangeEnd: (date: Date | undefined) => unknown;
