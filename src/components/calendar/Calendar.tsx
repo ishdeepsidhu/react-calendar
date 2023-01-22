@@ -214,10 +214,9 @@ function CalendarWithRef(
   const changeMonthInView = useCallback(
     (month: MonthIndices) => {
       !lockView && setMonthInView(month);
-      !lockView && onChangeMonth && onChangeMonth(month);
-      console.log("month called",month,onChangeMonth);
+      !lockView && onChangeMonth && onChangeMonth(month,yearInView);
     },
-    [lockView],
+    [lockView,yearInView],
   );
 
   // View States

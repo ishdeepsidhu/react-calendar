@@ -159,11 +159,11 @@ export interface CalendarProps {
     /**
      * OnChangeMonth callback functionn.
      */
-    onChangeMonth?: (value: number | any) => any | Promise<any> | void;
+    onChangeMonth?: (month: number | any, year: number | any) => any | Promise<any> | void;
     /**
      * OnChangeYear callback functionn.
      */
-    onChangeYear?: (value: number | any) => any | Promise<any> | void;
+    onChangeYear?: (year: number | any) => any | Promise<any> | void;
     onNextClickCallback?: (value: number | any) => any | Promise<any> | void;
     onPrevClickCallback?: (value: number | any) => any | Promise<any> | void;
     /**
