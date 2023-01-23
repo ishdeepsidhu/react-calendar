@@ -171,7 +171,7 @@ export interface CalendarProps {
    * OnChangeMonth callback functionn.
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onChangeMonth?: (month: number|any,year: number|any) => any | Promise<any> | void;
+  onChangeMonth?: (month: number|any) => any | Promise<any> | void;
   /**
    * OnChangeYear callback functionn.
    */
