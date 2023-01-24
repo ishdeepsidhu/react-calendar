@@ -215,6 +215,7 @@ function CalendarWithRef(
     (month: MonthIndices) => {
       !lockView && setMonthInView(month);
       !lockView && onChangeMonth && onChangeMonth(month);
+      let a = 0;
     },
     [lockView],
   );
