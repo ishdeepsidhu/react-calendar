@@ -52,6 +52,7 @@ function DayOfMonthSelectorComponent({
   checkIfWeekend,
   onPartialRangeSelect,
   isHighlight,
+  isGrey,
   onEachMultiSelect,
 }: DayOfMonthSelectorProps) {
   const daysOfMMonthViewMatrix = useMemo(() => {
@@ -71,11 +72,13 @@ function DayOfMonthSelectorComponent({
       monthInView: viewingMonth,
       startOfTheWeek: weekStartIndex,
       isHighlight,
+      isGrey,
       isDisabled,
     });
   }, [
     selectedDate,
     isHighlight,
+    isGrey,
     selectedRangeStart,
     selectedRangeEnd,
     newSelectedRangeStart,
@@ -209,6 +212,9 @@ function DayOfMonthSelectorComponent({
                 cell.isToday ? ' rc_today' : ''
               }${cell.isFirstRow ? ' rc_fr' : ''}${cell.isToday ? ' rc_today' : ''}${
                 cell.isHighlight ? ' rc_highlight' : ''
+              }${
+                cell.isGrey ? ' rc_grey' : ''
+                
               }${cell.isLastRow ? ' rc_lr' : ''}${cell.isFirsColumn ? ' rc_fc' : ''}${
                 cell.isLastColumn ? ' rc_lc' : ''
               }${cell.isSelected && !isRangeSelectorView ? ' rc_selected' : ''}${

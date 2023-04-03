@@ -62,6 +62,7 @@ function CalendarWithRef(
     onNextClickCallback,
     onPrevClickCallback,
     isHighlight,
+    isGrey,
     monthsLabel = NATIVE_INDEX_TO_LABEL_MONTHS_MAP,
     weekDaysLabel = NATIVE_INDEX_TO_LABEL_WEEKDAY_MAP,
     lockView = false,
@@ -215,7 +216,9 @@ function CalendarWithRef(
     (month: MonthIndices) => {
       !lockView && setMonthInView(month);
       !lockView && onChangeMonth && onChangeMonth(month);
-      let a = 0;
+      //let a = 0;
+      //let b = a;
+      //console.log("dummy",a,b);
     },
     [lockView],
   );
@@ -243,6 +246,7 @@ function CalendarWithRef(
       isNormalView: isNormalView,
       size: size,
       isHighlight,
+      isGrey,
       fontSize: fontSize,
       startOfWeek: startOfTheWeek,
       weekends: weekendIndexes,
@@ -311,6 +315,7 @@ function CalendarWithRef(
       selectedMultiDates,
       isMultiSelectorView,
       isHighlight,
+      isGrey,
       onChange,
       onChangeMonth,
       onChangeYear,

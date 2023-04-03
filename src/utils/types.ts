@@ -19,6 +19,7 @@ export interface DayOfMonthCell {
   isWeekend: boolean;
   isToday: boolean;
   isHighlight: boolean;
+  isGrey: boolean;
   isFirstRow: boolean;
   isLastRow: boolean;
   isFirsColumn: boolean;
@@ -41,6 +42,7 @@ export interface MonthCell {
 
 export interface GetDaysOfMonthViewMetrixParams {
   isHighlight?: (date: Date) => boolean;
+  isGrey?: (date: Date) => boolean;
   isSelectMultiDate: boolean;
   selectedMultiDates: Record<string, Date | undefined>;
   isRangeView: boolean;
@@ -162,6 +164,7 @@ export interface CalendarProps {
    * These dates will be highlighted
    */
   isHighlight?: (date: Date) => boolean;
+  isGrey?: (date: Date) => boolean;
   /**
    * OnChange callback functionn.
    */
@@ -220,7 +223,7 @@ type CommonProps = Required<
     | 'className'
   >
 > &
-  Pick<CalendarProps, 'isHighlight' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView' | 'onChangeMonth' | 'onChangeYear' | 'onNextClickCallback' | 'onPrevClickCallback'>;
+  Pick<CalendarProps, 'isHighlight' | 'isGrey' | 'onEachMultiSelect' | 'onPartialRangeSelect' | 'onChange' | 'initialView' | 'onChangeMonth' | 'onChangeYear' | 'onNextClickCallback' | 'onPrevClickCallback'>;
 
 export interface CalendarViewProps extends CommonProps {
   onChangeNewSelectedRangeEnd: (date: Date | undefined) => unknown;
@@ -253,6 +256,7 @@ export interface CalendarViewProps extends CommonProps {
 export type DayOfMonthSelectorProps = Pick<
   CalendarViewProps,
   | 'isHighlight'
+  | 'isGrey'
   | 'onChangeNewSelectedRangeEnd'
   | 'onChangeNewSelectedRangeStart'
   | 'noPadRangeCell'

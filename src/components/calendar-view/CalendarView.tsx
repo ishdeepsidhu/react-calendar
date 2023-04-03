@@ -80,6 +80,7 @@ function Component({
   onNextClickCallback,
   weekendMap,
   isHighlight,
+  isGrey,
 }: CalendarViewProps): React.ReactElement<CalendarViewProps> {
   const styles = useMemo(() => getStyles(size, fontSize), [size, fontSize]);
 
@@ -421,6 +422,7 @@ function Component({
               onChangeYear={onChangeYear}
               yearInView={yearInView}
               isHighlight={isHighlight}
+              isGrey={isGrey}
             />
           </>
         )}

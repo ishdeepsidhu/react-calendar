@@ -559,6 +559,7 @@ export function getDaysOfMonthViewMetrix(params: GetDaysOfMonthViewMetrixParams)
     selectedRangeStart,
     selectedRangeEnd,
     isHighlight,
+    isGrey,
     newSelectedRangeStart,
     newSelectedRangeEnd,
     isSelectMultiDate,
@@ -612,6 +613,7 @@ export function getDaysOfMonthViewMetrix(params: GetDaysOfMonthViewMetrixParams)
         ),
         activeMonthInView: false,
         isHighlight,
+        isGrey,
         newSelectedRangeEnd,
         newSelectedRangeStart,
         selectedDate,
@@ -644,6 +646,7 @@ export function getDaysOfMonthViewMetrix(params: GetDaysOfMonthViewMetrixParams)
         currDate: new Date(yearInView, monthInView, dayOfMonth),
         activeMonthInView: true,
         isHighlight,
+        isGrey,
         newSelectedRangeEnd,
         newSelectedRangeStart,
         selectedDate,
@@ -677,6 +680,7 @@ export function getDaysOfMonthViewMetrix(params: GetDaysOfMonthViewMetrixParams)
         currDate: new Date(isCurrentMonthLast ? yearInView + 1 : yearInView, getNextMonth(monthInView), dayOfMonth),
         activeMonthInView: false,
         isHighlight,
+        isGrey,
         newSelectedRangeEnd,
         newSelectedRangeStart,
         selectedDate,
@@ -705,6 +709,7 @@ interface GetCellValueParams
   extends Pick<
     GetDaysOfMonthViewMetrixParams,
     | 'isHighlight'
+    | 'isGrey'
     | 'isRangeView'
     | 'isRangeSelectModeOn'
     | 'newSelectedRangeStart'
@@ -729,6 +734,7 @@ function getCellValue({
   currDate,
   activeMonthInView,
   isHighlight,
+  isGrey,
   newSelectedRangeEnd,
   newSelectedRangeStart,
   selectedDate,
@@ -751,6 +757,7 @@ function getCellValue({
     month: currDate.getMonth() as MonthIndices,
     activeMonthInView,
     isHighlight: typeof isHighlight === 'function' ? isHighlight(currDate) : false,
+    isGrey: typeof isGrey === 'function' ? isGrey(currDate) : false,
     isInRange: isRangeView
       ? isRangeSelectModeOn
         ? isValid(newSelectedRangeStart) && isValid(newSelectedRangeEnd)
